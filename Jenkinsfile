@@ -6,7 +6,8 @@ pipeline {
     stage('Build') {
       agent {
         docker {
-          image 'maven:3.5.0'
+          image 'maven:3.5.3-alpine'
+          args '-v /root/.m2:/root/.m2'
         }
       }
       steps {
