@@ -1,3 +1,4 @@
-FROM tomcat:9.0-alpine
-LABEL version = "1.1.3"
-COPY target/petclinic.war /usr/local/tomcat/webapps/petclinic.war
+FROM frolvlad/alpine-oraclejdk8
+VOLUME /tmp
+COPY target/petclinic.war app.war
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.war"]
