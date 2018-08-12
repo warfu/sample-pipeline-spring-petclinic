@@ -18,9 +18,8 @@ pipeline {
       agent any
       steps {
         script {
-            pom = readMavenPom file: 'pom.xml'
-            TAG = pom.version
-            sh "docker build -t petclinic:${TAG} ."
+
+            sh "docker build -t petclinic:latest ."
         }
       }
     }
