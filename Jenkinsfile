@@ -14,7 +14,7 @@ pipeline {
           sh 'mvn clean install -B'
       }
     }
-    stage('Build container') {
+    stage('构建镜像') {
       agent any
       steps {
         script {
